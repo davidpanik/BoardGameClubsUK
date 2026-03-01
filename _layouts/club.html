@@ -9,7 +9,7 @@ layout: default
   "name": {{ page.name | jsonify }},
   {% if page.description %}"description": {{ page.description | jsonify }},{% endif %}
   {% if page.website and page.website != "" %}"url": {{ page.website | jsonify }},{% endif %}
-  "sameAs": [{% if page.facebook and page.facebook != "" %}{{ page.facebook | jsonify }}{% endif %}{% if page.discord and page.discord != "" %}{% if page.facebook and page.facebook != "" %},{% endif %}{{ page.discord | jsonify }}{% endif %}{% if page.bgg and page.bgg != "" %}{% if page.facebook and page.facebook != "" or page.discord and page.discord != "" %},{% endif %}{{ page.bgg | jsonify }}{% endif %}],
+  "sameAs": [{% if page.facebook and page.facebook != "" %}{{ page.facebook | jsonify }}{% endif %}{% if page.discord and page.discord != "" %}{% if page.facebook and page.facebook != "" %},{% endif %}{{ page.discord | jsonify }}{% endif %}{% if page.bgg and page.bgg != "" %}{% if page.facebook and page.facebook != "" or page.discord and page.discord != "" %},{% endif %}{{ page.bgg | jsonify }}{% endif %}{% if page.meetup and page.meetup != "" %}{% if page.facebook and page.facebook != "" or page.discord and page.discord != "" or page.bgg and page.bgg != "" %},{% endif %}{{ page.meetup | jsonify }}{% endif %}],
   "location": {
     "@type": "Place",
     "name": {{ page.location.name | jsonify }},
@@ -116,6 +116,9 @@ layout: default
   <div class="club-links">
     {% if page.website and page.website != "" %}
       <a href="{{ page.website }}" target="_blank" rel="noopener"><i data-lucide="globe" style="width:16px;height:16px;"></i> Website</a>
+    {% endif %}
+    {% if page.meetup and page.meetup != "" %}
+      <a href="{{ page.meetup }}" target="_blank" rel="noopener"><i data-lucide="calendar" style="width:16px;height:16px;"></i> Meetup</a>
     {% endif %}
     {% if page.facebook and page.facebook != "" %}
       <a href="{{ page.facebook }}" target="_blank" rel="noopener"><i data-lucide="facebook" style="width:16px;height:16px;"></i> Facebook</a>

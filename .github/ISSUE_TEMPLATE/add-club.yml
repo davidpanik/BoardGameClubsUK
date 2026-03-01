@@ -98,6 +98,12 @@ body:
       placeholder: https://
 
   - type: input
+    id: meetup
+    attributes:
+      label: Meetup group
+      placeholder: https://www.meetup.com/...
+
+  - type: input
     id: facebook
     attributes:
       label: Facebook page or group

@@ -19,6 +19,7 @@ layout: null
     "cost": {{ club.cost | jsonify }},
     "age_restriction": {{ club.age_restriction | jsonify }},
     "website": {{ club.website | jsonify }},
+    "meetup": {{ club.meetup | jsonify }},
     "facebook": {{ club.facebook | jsonify }},
     "description": {{ club.description | jsonify }},
     "image": {{ club.image | jsonify }}
