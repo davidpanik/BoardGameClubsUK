@@ -25,6 +25,11 @@
 
       this.map.addLayer(this.markers);
 
+      // Re-render Lucide icons inside popups when they open
+      this.map.on("popupopen", function () {
+        if (window.lucide) lucide.createIcons();
+      });
+
       return this;
     },
 
@@ -58,23 +63,25 @@
           popupIcon = '<div class="popup-icon-wrap"><img src="' + imgSrc + '" alt="" onload="window.GameClub.applyImgBg(this)"></div>';
         }
 
+        var venue = club.location && club.location.name
+          ? '<div class="popup-venue"><i data-lucide="map-pin"></i>' + self.escapeHtml(club.location.name) + '</div>'
+          : '';
+
         var popupContent =
+          '<a class="popup-card" href="' + club.url + '">' +
           '<div class="popup-body">' +
           popupIcon +
           '<div class="popup-content">' +
-          '<div class="popup-name"><a href="' +
-          club.url +
-          '">' +
+          '<div class="popup-name">' +
           self.escapeHtml(club.name) +
-          "</a></div>" +
-          '<div class="popup-venue">' +
-          self.escapeHtml(club.location.name) +
+          "</div>" +
+          venue +
+          "</div>" +
           "</div>" +
           '<div class="popup-tags">' +
           tags +
           "</div>" +
-          "</div>" +
-          "</div>";
+          "</a>";
 
         var marker = L.marker([club.location.lat, club.location.lng]).bindPopup(
           popupContent

@@ -755,6 +755,22 @@ noscript .club-list {
   margin: 0.75rem 1rem;
   min-width: 260px;
   font-family: $font-body;
+}
+
+.popup-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: $color-text;
+
+  &:hover {
+    text-decoration: none;
+
+    .popup-name {
+      color: $color-accent;
+    }
+  }
 
   .popup-body {
     display: flex;
@@ -766,8 +782,8 @@ noscript .club-list {
     flex-shrink: 0;
 
     img {
-      width: 56px;
-      height: 56px;
+      width: 48px;
+      height: 48px;
       border-radius: 6px;
       object-fit: contain;
       display: block;
@@ -783,22 +799,24 @@ noscript .club-list {
   .popup-name {
     font-weight: 600;
     font-size: 0.92rem;
+    color: $color-text;
     margin-bottom: 0.1rem;
-
-    a {
-      color: $color-text;
-      text-decoration: none;
-
-      &:hover {
-        color: $color-accent;
-      }
-    }
+    transition: color 0.15s;
   }
 
   .popup-venue {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
     font-size: 0.78rem;
     color: $color-text-light;
-    margin-bottom: 0.3rem;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
   }
 
   .popup-tags {
