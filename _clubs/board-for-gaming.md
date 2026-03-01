@@ -1,19 +1,19 @@
 ---
-name: "BOARD FOR GAMING"
+name: "Board For Gaming"
 days: ["Thursday"]
 time: "6:30pm - 9:30pm"
-frequency: "Fortnightly"
+frequency: "Twice monthly"
 location:
-  name: "ROCKBEARE VILLAGE HALL"
-  address: "ROCKBEARE VILLAGE HALL, Rockbeare, Ex5 2lg"
-  lat: 50.744955769232135
-  lng: -3.3883843241032756
-cost: "£1"
+  name: "Rockbeare Village Hall"
+  address: "Silver Ln, Rockbeare, Exeter EX5 2LP"
+  lat: 50.741287
+  lng: -3.3867242
+cost: "£1.50"
 image: ""
 website: ""
-facebook: "https://www.facebook.com/groups/18940409855599"
+facebook: "https://www.facebook.com/groups/189404909855599"
 discord: ""
 bgg: ""
 description: >-
-  We meet at Rockbeare Village Hall on the 1st and 3rd Thursday of each month (6.30pm-9.30pm), as well as occasional Sundays. Cost is £1 per session (50p for unwaged). We are a friendly and inclusive group who play a wide variety of modern boardgames.
+  Super inclusive group of largely euro gamers, often with 12-20 people at a session. We meet on the 1st and 3rd Thursday of each month (6:30pm-9:30pm), plus 4 Sundays a year. Cost is £1.50 per Thursday session, £4 for Sundays. Unwaged members pay half price.
 ---
