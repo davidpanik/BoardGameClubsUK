@@ -11,3 +11,4 @@ CLAUDE.md
 .claude/
 .env
 scripts/geocode.rb
+scripts/import_clubs.py
