@@ -162,14 +162,15 @@
         this.map.removeLayer(this.userMarker);
       }
 
-      this.userMarker = L.circleMarker([lat, lng], {
-        radius: 10,
-        fillColor: "#c8702a",
-        color: "#fff",
-        weight: 2,
-        opacity: 1,
-        fillOpacity: 0.9,
-      })
+      var icon = L.divIcon({
+        className: "user-location-marker",
+        html: '<div class="user-pulse"></div><div class="user-dot"></div>',
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -12]
+      });
+
+      this.userMarker = L.marker([lat, lng], { icon: icon, zIndexOffset: 1000 })
         .addTo(this.map)
         .bindPopup("You are here");
 

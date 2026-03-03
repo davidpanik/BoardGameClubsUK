@@ -103,7 +103,11 @@
   function update() {
     var filtered = search.getFiltered();
     map.addClubs(filtered);
-    map.fitToMarkers();
+    // Skip fitToMarkers when user location is active — showUserLocation already
+    // sets appropriate bounds that include the user marker.
+    if (!map.userMarker) {
+      map.fitToMarkers();
+    }
     renderCards(filtered);
     updateResultCount(filtered.length, search.allClubs.length);
     writeUrlParams();

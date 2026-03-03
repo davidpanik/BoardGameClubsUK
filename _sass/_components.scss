@@ -585,6 +585,48 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
+// ─── User location marker ───
+.user-location-marker {
+  position: relative;
+
+  .user-dot {
+    width: 22px;
+    height: 22px;
+    background: #e53e3e;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+
+  .user-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px;
+    height: 22px;
+    background: rgba(229, 62, 62, 0.25);
+    border-radius: 50%;
+    z-index: 1;
+    animation: user-pulse 2s ease-out infinite;
+  }
+}
+
+@keyframes user-pulse {
+  0% {
+    width: 22px;
+    height: 22px;
+    opacity: 1;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}
+
 // ─── Club detail page ───
 .club-detail {
   max-width: 720px;
