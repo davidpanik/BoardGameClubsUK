@@ -1,5 +1,6 @@
 ---
 name: "All Mana of Games"
+type: ["Board Games", "TCG", "RPG", "Wargames"]
 days: ["Wednesday", "Friday", "Saturday"]
 time: "7:00pm - 10:00pm"
 frequency: "Weekly"

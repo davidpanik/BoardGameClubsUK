@@ -1,5 +1,6 @@
 ---
 name: "The Role Play Haven - Archway Branch"
+type: ["RPG"]
 days: ["Tuesday"]
 time: "7:00pm"
 frequency: "Weekly"

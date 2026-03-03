@@ -1,5 +1,6 @@
 ---
 name: "Wolves of Ravenswood"
+type: ["BOTC"]
 days: ["Monday"]
 time: "7:00pm"
 frequency: "Monthly"

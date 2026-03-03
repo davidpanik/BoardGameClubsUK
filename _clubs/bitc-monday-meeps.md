@@ -1,5 +1,6 @@
 ---
 name: "BITC Monday Meeps"
+type: ["Board Games", "BOTC"]
 days: ["Monday"]
 time: "5:00pm - 11:00pm"
 frequency: "Weekly"

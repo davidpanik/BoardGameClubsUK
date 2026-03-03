@@ -1,5 +1,6 @@
 ---
 name: "Mid Somerset Wargamers"
+type: ["Wargames", "Board Games", "RPG"]
 days: ["Thursday"]
 time: "7:00pm"
 frequency: "Weekly"

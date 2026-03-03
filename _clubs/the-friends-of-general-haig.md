@@ -1,5 +1,6 @@
 ---
 name: "The Friends of General Haig"
+type: ["Wargames"]
 days: ["Saturday"]
 time: "1:00pm"
 frequency: "Weekly"

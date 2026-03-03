@@ -1,5 +1,6 @@
 ---
 name: "York Garrison Wargaming Club"
+type: ["Wargames"]
 days: ["Wednesday"]
 time: "6:30pm - 10:30pm"
 frequency: "Weekly"

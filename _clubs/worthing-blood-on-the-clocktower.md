@@ -1,5 +1,6 @@
 ---
 name: "Worthing Blood on the Clocktower"
+type: ["BOTC"]
 days: ["Sunday"]
 time: "4:00pm - 10:00pm"
 frequency: "Monthly"

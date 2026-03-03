@@ -1,5 +1,6 @@
 ---
 name: "Scimitar Wargames Group"
+type: ["Board Games", "Wargames"]
 days: ["Wednesday"]
 time: "7:00pm"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "East Herts Gamers"
+type: ["Board Games", "RPG", "Wargames"]
 days: ["Wednesday", "Friday"]
 time: "6:30pm - 7:00pm"
 frequency: "Weekly"

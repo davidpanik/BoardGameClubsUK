@@ -1,5 +1,6 @@
 ---
 name: "Tring Wargames Club"
+type: ["Wargames"]
 days: ["Friday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"

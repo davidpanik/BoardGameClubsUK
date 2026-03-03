@@ -1,5 +1,6 @@
 ---
 name: "Tabletop Legends"
+type: ["Board Games", "RPG", "TCG"]
 days: ["Saturday"]
 time: ""
 frequency: "Monthly"

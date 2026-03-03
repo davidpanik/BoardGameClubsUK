@@ -35,6 +35,16 @@
       if (searchInput) searchInput.value = params.q;
       if (searchInputMobile) searchInputMobile.value = params.q;
     }
+    if (params.type && params.type.length > 0) {
+      search.setTypeFilters(params.type);
+      var typeCheckboxes = document.querySelectorAll("#type-filter input[type='checkbox']");
+      for (var i = 0; i < typeCheckboxes.length; i++) {
+        if (params.type.indexOf(typeCheckboxes[i].value) !== -1) {
+          typeCheckboxes[i].checked = true;
+        }
+      }
+      updateTypeFilterLabel();
+    }
     if (params.days && params.days.length > 0) {
       search.setDayFilters(params.days);
       // Check matching checkboxes in multi-select
@@ -61,9 +71,12 @@
       if (singleDay) daysStr = singleDay;
     }
     var days = daysStr ? daysStr.split(",").filter(function (d) { return d; }) : [];
+    var typeStr = params.get("type") || "";
+    var types = typeStr ? typeStr.split(",").filter(function (t) { return t; }) : [];
     return {
       q: params.get("q") || "",
       days: days,
+      type: types,
       distance: params.get("distance") || ""
     };
   }
@@ -75,9 +88,11 @@
     var params = new URLSearchParams();
     var q = searchInput ? searchInput.value.trim() : "";
     var days = search.dayFilters.join(",");
+    var types = search.typeFilters.join(",");
     var distance = distanceFilter ? distanceFilter.value : "";
 
     if (q) params.set("q", q);
+    if (types) params.set("type", types);
     if (days) params.set("days", days);
     if (distance) params.set("distance", distance);
 
@@ -107,13 +122,11 @@
     var html = clubs
       .map(function (club) {
         var tags = "";
-        club.days.forEach(function (d) {
-          tags += '<span class="tag tag-day">' + escapeHtml(d) + "</span>";
+        var clubTypes = club.type || ["Board Games"];
+        clubTypes.forEach(function (t) {
+          var cls = "tag tag-type tag-type-" + t.toLowerCase().replace(/ /g, "-");
+          tags += '<span class="' + cls + '">' + escapeHtml(t) + "</span>";
         });
-
-        if (club.frequency && club.frequency !== "Weekly") {
-          tags += '<span class="tag">' + escapeHtml(club.frequency) + "</span>";
-        }
 
         if (club.cost) {
           tags += '<span class="tag tag-cost">' + escapeHtml(club.cost) + "</span>";
@@ -136,12 +149,16 @@
         }
 
         var venue = club.location && club.location.name
-          ? '<div class="club-venue"><i data-lucide="map-pin"></i>' + escapeHtml(club.location.name) + "</div>"
+          ? '<div class="club-venue"><i data-lucide="map-pin"></i><span>' + escapeHtml(club.location.name) + "</span></div>"
           : "";
 
-        var meta = venue
-          ? '<div class="club-card-meta">' + venue + "</div>"
-          : "";
+        var daysText = club.days.join(", ");
+        if (club.frequency && club.frequency !== "Weekly") {
+          daysText += " \u00b7 " + club.frequency;
+        }
+        var daysLine = '<div class="club-days"><i data-lucide="calendar"></i><span>' + escapeHtml(daysText) + "</span></div>";
+
+        var meta = '<div class="club-card-meta">' + venue + daysLine + "</div>";
 
         return (
           '<a class="club-card" href="' +
@@ -206,9 +223,25 @@
     }
   }
 
+  function updateTypeFilterLabel() {
+    var label = document.querySelector("#type-filter .multi-select-label");
+    if (!label) return;
+    var types = search.typeFilters;
+    if (types.length === 0) {
+      label.textContent = "All types";
+    } else if (types.length === 1) {
+      label.textContent = types[0];
+    } else {
+      label.textContent = types.length + " types selected";
+    }
+  }
+
   function bindEvents() {
     var searchInput = document.getElementById("search-input");
     var searchInputMobile = document.getElementById("search-input-mobile");
+    var typeFilterEl = document.getElementById("type-filter");
+    var typeToggle = typeFilterEl ? typeFilterEl.querySelector(".multi-select-toggle") : null;
+    var typeCheckboxes = typeFilterEl ? typeFilterEl.querySelectorAll("input[type='checkbox']") : [];
     var dayFilterEl = document.getElementById("day-filter");
     var dayToggle = dayFilterEl ? dayFilterEl.querySelector(".multi-select-toggle") : null;
     var dayCheckboxes = dayFilterEl ? dayFilterEl.querySelectorAll("input[type='checkbox']") : [];
@@ -235,10 +268,37 @@
       });
     }
 
+    // Type filter multi-select dropdown
+    if (typeToggle) {
+      typeToggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        // Close day dropdown
+        if (dayFilterEl) {
+          dayFilterEl.classList.remove("is-open");
+          if (dayToggle) dayToggle.setAttribute("aria-expanded", "false");
+        }
+        var isOpen = typeFilterEl.classList.toggle("is-open");
+        typeToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+
+    for (var t = 0; t < typeCheckboxes.length; t++) {
+      typeCheckboxes[t].addEventListener("change", function () {
+        search.toggleTypeFilter(this.value);
+        updateTypeFilterLabel();
+        update();
+      });
+    }
+
     // Day filter multi-select dropdown
     if (dayToggle) {
       dayToggle.addEventListener("click", function (e) {
         e.stopPropagation();
+        // Close type dropdown
+        if (typeFilterEl) {
+          typeFilterEl.classList.remove("is-open");
+          if (typeToggle) typeToggle.setAttribute("aria-expanded", "false");
+        }
         var isOpen = dayFilterEl.classList.toggle("is-open");
         dayToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
@@ -252,8 +312,12 @@
       });
     }
 
-    // Close dropdown when clicking outside
+    // Close dropdowns when clicking outside
     document.addEventListener("click", function (e) {
+      if (typeFilterEl && !typeFilterEl.contains(e.target)) {
+        typeFilterEl.classList.remove("is-open");
+        if (typeToggle) typeToggle.setAttribute("aria-expanded", "false");
+      }
       if (dayFilterEl && !dayFilterEl.contains(e.target)) {
         dayFilterEl.classList.remove("is-open");
         if (dayToggle) dayToggle.setAttribute("aria-expanded", "false");

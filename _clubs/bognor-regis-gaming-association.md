@@ -1,5 +1,6 @@
 ---
 name: "Bognor Regis Gaming Association"
+type: ["Board Games", "RPG", "Wargames", "TCG"]
 days: ["Tuesday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"

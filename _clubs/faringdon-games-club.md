@@ -1,5 +1,6 @@
 ---
 name: "Faringdon Games Club"
+type: ["Board Games", "RPG", "TCG"]
 days: ["Sunday"]
 time: "5:00pm"
 frequency: "Weekly"

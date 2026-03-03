@@ -1,5 +1,6 @@
 ---
 name: "Leven Gaming Society"
+type: ["Board Games", "RPG", "Wargames", "TCG"]
 days: ["Saturday"]
 time: "11:00am"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "Birmingham Central Role Players (BCRP)"
+type: ["RPG"]
 days: ["Thursday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"

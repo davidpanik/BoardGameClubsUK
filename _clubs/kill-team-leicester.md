@@ -1,5 +1,6 @@
 ---
 name: "Kill Team Leicester"
+type: ["Wargames"]
 days: ["Wednesday"]
 time: "6:00pm - 9:00pm"
 frequency: "Monthly"

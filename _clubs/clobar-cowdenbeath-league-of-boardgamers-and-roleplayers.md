@@ -1,5 +1,6 @@
 ---
 name: "CLoBaR (Cowdenbeath League of Boardgamers and Roleplayers)"
+type: ["Board Games", "RPG"]
 days: ["Wednesday", "Saturday"]
 time: "4:00pm - 9:00pm"
 frequency: "Weekly"

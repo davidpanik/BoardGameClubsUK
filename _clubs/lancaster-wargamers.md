@@ -1,5 +1,6 @@
 ---
 name: "Lancaster Wargamers"
+type: ["Wargames", "Board Games", "RPG"]
 days: ["Tuesday"]
 time: "7:00pm"
 frequency: "Weekly"

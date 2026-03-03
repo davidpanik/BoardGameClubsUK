@@ -1,5 +1,6 @@
 ---
 name: "Clubhouse Gaming"
+type: ["Board Games", "RPG"]
 days: ["Monday", "Tuesday", "Wednesday", "Thursday"]
 time: "6:30pm - 10:30pm"
 frequency: "Weekly"

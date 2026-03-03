@@ -1,5 +1,6 @@
 ---
 name: "Cardboard Emperors"
+type: ["Board Games", "Wargames"]
 days: ["Various"]
 time: ""
 frequency: "Weekly"

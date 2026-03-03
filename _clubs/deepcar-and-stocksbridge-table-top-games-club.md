@@ -1,5 +1,6 @@
 ---
 name: "Deepcar and Stocksbridge Table-Top Games Club"
+type: ["Board Games", "RPG"]
 days: ["Wednesday"]
 time: "7:00pm - 10:00pm"
 frequency: "Weekly"

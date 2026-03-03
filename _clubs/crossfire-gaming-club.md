@@ -1,5 +1,6 @@
 ---
 name: "Crossfire Gaming Club"
+type: ["Wargames"]
 days: ["Thursday"]
 time: "6:00pm - 10:00pm"
 frequency: "Weekly"

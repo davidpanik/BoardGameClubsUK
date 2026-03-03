@@ -1,5 +1,6 @@
 ---
 name: "October wargames association"
+type: ["Board Games", "Wargames"]
 days: ["Tuesday"]
 time: "5:30pm - 10:30pm"
 frequency: "Weekly"

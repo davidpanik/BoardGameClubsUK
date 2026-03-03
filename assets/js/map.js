@@ -1,6 +1,52 @@
 (function () {
   "use strict";
 
+  var typeColors = {
+    "Board Games": "#3b82f6",
+    "RPG": "#8b5cf6",
+    "Wargames": "#ef4444",
+    "BOTC": "#ec4899",
+    "TCG": "#f59e0b"
+  };
+
+  // Lucide icon SVG inner elements (24x24 viewBox, white stroke)
+  var typeIcons = {
+    // lucide:dices
+    "Board Games": '<rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/>',
+    // lucide:swords
+    "RPG": '<polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/>',
+    // lucide:shield
+    "Wargames": '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+    // lucide:skull
+    "BOTC": '<path d="m12.5 17-.5-1-.5 1h1z"/><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="12" r="1"/>',
+    // lucide:layers
+    "TCG": '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>'
+  };
+
+  function getTypeColor(club) {
+    var types = club.type || ["Board Games"];
+    return typeColors[types[0]] || typeColors["Board Games"];
+  }
+
+  function getTypeIcon(club) {
+    var types = club.type || ["Board Games"];
+    return typeIcons[types[0]] || typeIcons["Board Games"];
+  }
+
+  function createPinIcon(color, iconSvg) {
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="31" height="46" viewBox="0 0 31 46">' +
+      '<path d="M15.5 0C6.9 0 0 6.9 0 15.5C0 27.1 15.5 46 15.5 46S31 27.1 31 15.5C31 6.9 24.1 0 15.5 0z" fill="' + color + '"/>' +
+      '<svg x="7" y="7" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + iconSvg + '</svg>' +
+      '</svg>';
+    return L.divIcon({
+      html: svg,
+      className: "map-pin-icon",
+      iconSize: [31, 46],
+      iconAnchor: [15, 46],
+      popupAnchor: [1, -38]
+    });
+  }
+
   var GameClubMap = {
     map: null,
     markers: null,
@@ -42,13 +88,11 @@
         if (!club.location.lat || !club.location.lng) return;
 
         var tags = "";
-        club.days.forEach(function (d) {
-          tags += '<span class="tag tag-day">' + self.escapeHtml(d) + "</span>";
+        var clubTypes = club.type || ["Board Games"];
+        clubTypes.forEach(function (t) {
+          var cls = "tag tag-type tag-type-" + t.toLowerCase().replace(/ /g, "-");
+          tags += '<span class="' + cls + '">' + self.escapeHtml(t) + "</span>";
         });
-
-        if (club.frequency && club.frequency !== "Weekly") {
-          tags += '<span class="tag">' + self.escapeHtml(club.frequency) + "</span>";
-        }
 
         if (club.cost) {
           tags += '<span class="tag tag-cost">' + self.escapeHtml(club.cost) + "</span>";
@@ -64,8 +108,14 @@
         }
 
         var venue = club.location && club.location.name
-          ? '<div class="popup-venue"><i data-lucide="map-pin"></i>' + self.escapeHtml(club.location.name) + '</div>'
+          ? '<div class="popup-venue"><i data-lucide="map-pin"></i><span>' + self.escapeHtml(club.location.name) + '</span></div>'
           : '';
+
+        var daysText = club.days.join(", ");
+        if (club.frequency && club.frequency !== "Weekly") {
+          daysText += " \u00b7 " + club.frequency;
+        }
+        var daysLine = '<div class="popup-days"><i data-lucide="calendar"></i><span>' + self.escapeHtml(daysText) + '</span></div>';
 
         var popupContent =
           '<a class="popup-card" href="' + club.url + '">' +
@@ -76,6 +126,7 @@
           self.escapeHtml(club.name) +
           "</div>" +
           venue +
+          daysLine +
           "</div>" +
           "</div>" +
           '<div class="popup-tags">' +
@@ -83,7 +134,8 @@
           "</div>" +
           "</a>";
 
-        var marker = L.marker([club.location.lat, club.location.lng]).bindPopup(
+        var pinIcon = createPinIcon(getTypeColor(club), getTypeIcon(club));
+        var marker = L.marker([club.location.lat, club.location.lng], { icon: pinIcon }).bindPopup(
           popupContent
         );
 
@@ -146,4 +198,7 @@
   };
 
   window.GameClubMap = GameClubMap;
+  window.GameClubMap.createPinIcon = createPinIcon;
+  window.GameClubMap.typeColors = typeColors;
+  window.GameClubMap.typeIcons = typeIcons;
 })();

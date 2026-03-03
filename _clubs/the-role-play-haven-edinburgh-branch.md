@@ -1,5 +1,6 @@
 ---
 name: "The Role Play Haven - Edinburgh Branch"
+type: ["RPG"]
 days: ["Wednesday"]
 time: "6:00pm"
 frequency: "Weekly"

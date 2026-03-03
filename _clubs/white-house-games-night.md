@@ -1,5 +1,6 @@
 ---
 name: "White House Games Night"
+type: ["Board Games", "BOTC", "RPG"]
 days: ["Tuesday"]
 time: "6:30pm - 10:00pm"
 frequency: "Twice monthly"

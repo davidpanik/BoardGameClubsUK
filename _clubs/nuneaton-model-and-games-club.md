@@ -1,5 +1,6 @@
 ---
 name: "Nuneaton Model and Games Club"
+type: ["Wargames", "TCG"]
 days: ["Saturday"]
 time: "10:00am - 4:00pm"
 frequency: "Weekly"

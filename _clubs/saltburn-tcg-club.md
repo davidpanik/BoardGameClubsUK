@@ -1,5 +1,6 @@
 ---
 name: "Saltburn TCG Club"
+type: ["TCG"]
 days: ["Wednesday"]
 time: "6:00pm - 8:30pm"
 frequency: "Weekly"

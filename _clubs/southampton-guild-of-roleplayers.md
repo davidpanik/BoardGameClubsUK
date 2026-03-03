@@ -1,5 +1,6 @@
 ---
 name: "Southampton Guild of Roleplayers"
+type: ["RPG"]
 days: ["Wednesday"]
 time: "6:30pm"
 frequency: "Weekly"

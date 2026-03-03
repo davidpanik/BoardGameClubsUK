@@ -1,5 +1,6 @@
 ---
 name: "Wadebridge Gaming Group"
+type: ["Board Games", "Wargames"]
 days: ["Thursday"]
 time: "7:00pm"
 frequency: "Weekly"

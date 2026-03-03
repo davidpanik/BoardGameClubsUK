@@ -1,5 +1,6 @@
 ---
 name: "Kirriemuir Wargames Club"
+type: ["Wargames"]
 days: ["Sunday"]
 time: "10:00am"
 frequency: "Weekly"

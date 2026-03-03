@@ -9,6 +9,7 @@ require "yaml"
 require "date"
 
 VALID_DAYS = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday Various].freeze
+VALID_TYPES = ["Board Games", "RPG", "Wargames", "BOTC", "TCG"].freeze
 LAT_RANGE = (49.0..61.0)
 LNG_RANGE = (-9.0..3.0)
 
@@ -83,6 +84,19 @@ files.each do |file|
     data["days"].each_with_index do |d, i|
       unless d.is_a?(String) && VALID_DAYS.include?(d)
         file_errors << "days[#{i}]: must be one of #{VALID_DAYS.join(', ')} (got #{d.inspect})"
+      end
+    end
+  end
+
+  # type: optional, but when present must be non-empty array of valid types
+  if data.key?("type")
+    if !data["type"].is_a?(Array) || data["type"].empty?
+      file_errors << "type: must be a non-empty array of types (got #{data['type'].inspect})"
+    elsif data["type"].is_a?(Array)
+      data["type"].each_with_index do |t, i|
+        unless t.is_a?(String) && VALID_TYPES.include?(t)
+          file_errors << "type[#{i}]: must be one of #{VALID_TYPES.join(', ')} (got #{t.inspect})"
+        end
       end
     end
   end

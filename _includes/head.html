@@ -1,13 +1,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 {% if page.layout == "club" %}
-  <title>{{ page.name }} | Board Game Club | {{ site.title }}</title>
+  {% assign club_type_label = "Board Game" %}{% if page.type %}{% assign first_type = page.type | first %}{% if first_type == "RPG" %}{% assign club_type_label = "RPG" %}{% elsif first_type == "Wargames" %}{% assign club_type_label = "Wargaming" %}{% elsif first_type == "BOTC" %}{% assign club_type_label = "Blood on the Clocktower" %}{% elsif first_type == "TCG" %}{% assign club_type_label = "TCG" %}{% endif %}{% endif %}
+  <title>{{ page.name }} | {{ club_type_label }} Club | {{ site.title }}</title>
   <meta name="description" content="{{ page.description | strip_html | truncate: 160 }}">
 {% elsif page.title %}
   <title>{{ page.title }} | {{ site.title }}</title>
 {% else %}
-  <title>{{ site.title }} | Find Board Game Clubs Near You</title>
-  <meta name="description" content="Find your nearest board game club across the UK. A free, community-maintained directory with an interactive map.">
+  <title>{{ site.title }} | Find Board Game, RPG, Wargaming &amp; Tabletop Clubs Near You</title>
+  <meta name="description" content="Find your nearest board game, RPG, wargaming, Blood on the Clocktower, and TCG club across the UK. A free, community-maintained directory with an interactive map.">
 {% endif %}
 <link rel="icon" type="image/png" href="{{ '/assets/favico.png' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">

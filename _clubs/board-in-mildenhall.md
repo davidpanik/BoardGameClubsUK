@@ -1,5 +1,6 @@
 ---
 name: "Board In Mildenhall"
+type: ["Board Games", "RPG"]
 days: ["Various"]
 time: ""
 frequency: "Weekly"

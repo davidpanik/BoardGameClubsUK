@@ -1,5 +1,6 @@
 ---
 name: "Dragons Keep"
+type: ["RPG", "Board Games", "Wargames"]
 days: ["Friday"]
 time: ""
 frequency: "Weekly"

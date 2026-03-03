@@ -1,5 +1,6 @@
 ---
 name: "East Neuk Tabletop"
+type: ["Board Games", "RPG", "Wargames"]
 days: ["Sunday"]
 time: "1:00pm - 5:00pm"
 frequency: "Monthly"

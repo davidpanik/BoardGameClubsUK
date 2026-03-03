@@ -1,5 +1,6 @@
 ---
 name: "The Role Play Haven - Hammersmith Branch"
+type: ["RPG"]
 days: ["Thursday"]
 time: "7:00pm"
 frequency: "Weekly"

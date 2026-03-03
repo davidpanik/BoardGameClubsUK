@@ -1,5 +1,6 @@
 ---
 name: "Newtown Gamers Club"
+type: ["Board Games", "RPG"]
 days: ["Wednesday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"

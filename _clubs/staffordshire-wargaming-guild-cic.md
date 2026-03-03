@@ -1,5 +1,6 @@
 ---
 name: "Staffordshire Wargaming Guild CIC"
+type: ["Wargames"]
 days: ["Tuesday", "Thursday", "Sunday"]
 time: "6:00pm - 4:30pm"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "Phoenix Gaming Club"
+type: ["Wargames", "Board Games", "RPG"]
 days: ["Tuesday"]
 time: "6:45pm"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "turriff"
+type: ["Board Games", "RPG"]
 days: ["Wednesday"]
 time: ""
 frequency: "Weekly"

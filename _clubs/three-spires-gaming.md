@@ -1,5 +1,6 @@
 ---
 name: "Three Spires Gaming"
+type: ["Wargames", "TCG"]
 days: ["Friday"]
 time: "7:00pm - 10:00pm"
 frequency: "Weekly"

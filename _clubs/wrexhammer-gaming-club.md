@@ -1,5 +1,6 @@
 ---
 name: "Wrexhammer Gaming Club"
+type: ["Wargames"]
 days: ["Wednesday"]
 time: "6:30pm"
 frequency: "Weekly"

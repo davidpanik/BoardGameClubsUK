@@ -1,5 +1,6 @@
 ---
 name: "East Devon Tabletop Gaming Group"
+type: ["Board Games", "RPG"]
 days: ["Tuesday"]
 time: "6:00pm - 6:30pm"
 frequency: "Weekly"

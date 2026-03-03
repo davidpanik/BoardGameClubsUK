@@ -5,6 +5,7 @@
     allClubs: [],
     searchQuery: "",
     dayFilters: [],
+    typeFilters: [],
     maxDistance: 0,
     userLat: null,
     userLng: null,
@@ -28,6 +29,19 @@
         this.dayFilters.push(day);
       } else {
         this.dayFilters.splice(idx, 1);
+      }
+    },
+
+    setTypeFilters: function (types) {
+      this.typeFilters = types || [];
+    },
+
+    toggleTypeFilter: function (type) {
+      var idx = this.typeFilters.indexOf(type);
+      if (idx === -1) {
+        this.typeFilters.push(type);
+      } else {
+        this.typeFilters.splice(idx, 1);
       }
     },
 
@@ -72,11 +86,25 @@
             club.location.address,
             club.description,
             club.days.join(" "),
+            (club.type || []).join(" "),
           ]
             .filter(Boolean)
             .join(" ")
             .toLowerCase();
           if (haystack.indexOf(self.searchQuery) === -1) return false;
+        }
+
+        // Type filter (OR logic: club passes if it matches any selected type)
+        if (self.typeFilters.length > 0) {
+          var clubTypes = club.type || ["Board Games"];
+          var matchesType = false;
+          for (var t = 0; t < self.typeFilters.length; t++) {
+            if (clubTypes.indexOf(self.typeFilters[t]) !== -1) {
+              matchesType = true;
+              break;
+            }
+          }
+          if (!matchesType) return false;
         }
 
         // Day filter (OR logic: club passes if it matches any selected day)

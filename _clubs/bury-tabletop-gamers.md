@@ -1,5 +1,6 @@
 ---
 name: "Bury Tabletop Gamers"
+type: ["Board Games", "RPG", "Wargames"]
 days: ["Thursday"]
 time: "6:30pm"
 frequency: "Weekly"

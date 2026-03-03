@@ -1,5 +1,6 @@
 ---
 name: "Wakefield Warriors"
+type: ["Board Games", "Wargames", "RPG", "TCG"]
 days: ["Tuesday"]
 time: "7:15pm - late"
 frequency: "Weekly"

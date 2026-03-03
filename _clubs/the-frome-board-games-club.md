@@ -1,5 +1,6 @@
 ---
 name: "The Frome Board Games Club"
+type: ["Board Games", "Wargames"]
 days: ["Thursday"]
 time: "7:00pm"
 frequency: "Weekly"

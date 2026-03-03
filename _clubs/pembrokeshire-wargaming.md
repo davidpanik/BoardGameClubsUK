@@ -1,5 +1,6 @@
 ---
 name: "Pembrokeshire Wargaming"
+type: ["Wargames"]
 days: ["Thursday"]
 time: "7:30pm"
 frequency: "Weekly"

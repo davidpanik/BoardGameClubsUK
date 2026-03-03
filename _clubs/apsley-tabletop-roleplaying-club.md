@@ -1,5 +1,6 @@
 ---
 name: "Apsley Tabletop Roleplaying Club"
+type: ["RPG"]
 days: ["Thursday"]
 time: "6:45pm - 10:30pm"
 frequency: "Weekly"

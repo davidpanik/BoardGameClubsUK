@@ -1,5 +1,6 @@
 ---
 name: "Wargames Assocation of Reading"
+type: ["Board Games", "Wargames"]
 days: ["Wednesday"]
 time: "5:45pm - 10:45pm"
 frequency: "Weekly"

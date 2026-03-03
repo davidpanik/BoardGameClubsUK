@@ -8,6 +8,7 @@ layout: default
   "@type": "Organization",
   "name": {{ page.name | jsonify }},
   {% if page.description %}"description": {{ page.description | jsonify }},{% endif %}
+  "keywords": "{% if page.type %}{{ page.type | join: ', ' }}{% else %}Board Games{% endif %}, tabletop gaming, game club, UK",
   {% if page.website and page.website != "" %}"url": {{ page.website | jsonify }},{% endif %}
   "sameAs": [{% if page.facebook and page.facebook != "" %}{{ page.facebook | jsonify }}{% endif %}{% if page.discord and page.discord != "" %}{% if page.facebook and page.facebook != "" %},{% endif %}{{ page.discord | jsonify }}{% endif %}{% if page.bgg and page.bgg != "" %}{% if page.facebook and page.facebook != "" or page.discord and page.discord != "" %},{% endif %}{{ page.bgg | jsonify }}{% endif %}{% if page.meetup and page.meetup != "" %}{% if page.facebook and page.facebook != "" or page.discord and page.discord != "" or page.bgg and page.bgg != "" %},{% endif %}{{ page.meetup | jsonify }}{% endif %}],
   "location": {
@@ -58,8 +59,18 @@ layout: default
     </div>
     {% endif %}
     <div class="club-detail-heading-text">
-      <h1>{{ page.name }} <span class="club-location-subtitle">Board Game Club in {{ page.location.address }}</span></h1>
+      {% assign club_type_label = "Board Game" %}{% if page.type %}{% assign first_type = page.type | first %}{% if first_type == "RPG" %}{% assign club_type_label = "RPG" %}{% elsif first_type == "Wargames" %}{% assign club_type_label = "Wargaming" %}{% elsif first_type == "BOTC" %}{% assign club_type_label = "Blood on the Clocktower" %}{% elsif first_type == "TCG" %}{% assign club_type_label = "TCG" %}{% endif %}{% endif %}
+      <h1>{{ page.name }} <span class="club-location-subtitle">{{ club_type_label }} Club in {{ page.location.address }}</span></h1>
       <div class="club-detail-meta">
+        {% assign club_types = page.type | default: nil %}
+        {% if club_types %}
+          {% for t in club_types %}
+            {% assign type_slug = t | downcase | replace: ' ', '-' %}
+            <span class="tag tag-type tag-type-{{ type_slug }}">{{ t }}</span>
+          {% endfor %}
+        {% else %}
+          <span class="tag tag-type tag-type-board-games">Board Games</span>
+        {% endif %}
         {% for d in page.days %}
           <span class="tag tag-day">{{ d }}</span>
         {% endfor %}
@@ -78,6 +89,9 @@ layout: default
   {% endif %}
 
   <dl class="detail-info">
+    <dt>Type</dt>
+    <dd>{% if page.type %}{{ page.type | join: ", " }}{% else %}Board Games{% endif %}</dd>
+
     <dt>Venue</dt>
     <dd>{{ page.location.name }}</dd>
 
@@ -142,13 +156,41 @@ layout: default
         crossorigin=""></script>
 <script>
   (function() {
+    var typeColors = {
+      "Board Games": "#3b82f6",
+      "RPG": "#8b5cf6",
+      "Wargames": "#ef4444",
+      "BOTC": "#ec4899",
+      "TCG": "#f59e0b"
+    };
+    var typeIcons = {
+      "Board Games": '<rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/>',
+      "RPG": '<polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/>',
+      "Wargames": '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+      "BOTC": '<path d="m12.5 17-.5-1-.5 1h1z"/><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="12" r="1"/>',
+      "TCG": '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>'
+    };
+    var clubTypes = {% if page.type %}{{ page.type | jsonify }}{% else %}["Board Games"]{% endif %};
+    var color = typeColors[clubTypes[0]] || typeColors["Board Games"];
+    var iconSvg = typeIcons[clubTypes[0]] || typeIcons["Board Games"];
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="31" height="46" viewBox="0 0 31 46">' +
+      '<path d="M15.5 0C6.9 0 0 6.9 0 15.5C0 27.1 15.5 46 15.5 46S31 27.1 31 15.5C31 6.9 24.1 0 15.5 0z" fill="' + color + '"/>' +
+      '<svg x="7" y="7" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + iconSvg + '</svg>' +
+      '</svg>';
+    var pinIcon = L.divIcon({
+      html: svg,
+      className: "map-pin-icon",
+      iconSize: [31, 46],
+      iconAnchor: [15, 46],
+      popupAnchor: [1, -38]
+    });
     var map = L.map('detail-map').setView([{{ page.location.lat }}, {{ page.location.lng }}], 15);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
       maxZoom: 19,
       subdomains: 'abcd'
     }).addTo(map);
-    L.marker([{{ page.location.lat }}, {{ page.location.lng }}]).addTo(map)
+    L.marker([{{ page.location.lat }}, {{ page.location.lng }}], { icon: pinIcon }).addTo(map)
       .bindPopup('<strong>{{ page.location.name | escape }}</strong><br>{{ page.location.address | escape }}');
   })();
 </script>

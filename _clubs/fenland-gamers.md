@@ -1,5 +1,6 @@
 ---
 name: "Fenland Gamers"
+type: ["Board Games", "RPG", "TCG"]
 days: ["Friday"]
 time: "6:30pm"
 frequency: "Fortnightly"

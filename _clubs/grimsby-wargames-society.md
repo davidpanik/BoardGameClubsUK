@@ -1,5 +1,6 @@
 ---
 name: "Grimsby Wargames Society"
+type: ["Board Games", "Wargames"]
 days: ["Thursday"]
 time: "7:15pm"
 frequency: "Weekly"

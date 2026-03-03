@@ -1,5 +1,6 @@
 ---
 name: "The Role Play Haven - Cardiff North Branch"
+type: ["RPG"]
 days: ["Wednesday"]
 time: "7:00pm"
 frequency: "Weekly"

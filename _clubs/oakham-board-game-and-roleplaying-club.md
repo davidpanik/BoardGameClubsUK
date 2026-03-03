@@ -1,5 +1,6 @@
 ---
 name: "Oakham Board Game & Roleplaying Club"
+type: ["Board Games", "RPG"]
 days: ["Wednesday"]
 time: "30:00pm - 10:30am"
 frequency: "Weekly"

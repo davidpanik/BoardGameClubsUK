@@ -1,5 +1,6 @@
 ---
 name: "M:TG London @ The Games Club"
+type: ["TCG"]
 days: ["Tuesday"]
 time: "5:30pm - 7:00pm"
 frequency: "Weekly"

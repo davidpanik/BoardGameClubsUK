@@ -1,5 +1,6 @@
 ---
 name: "Hophack RPG Group"
+type: ["RPG"]
 days: ["Saturday"]
 time: "2:00pm - 6:00pm"
 frequency: "Weekly"

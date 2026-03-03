@@ -1,5 +1,6 @@
 ---
 name: "Crawley Gaming Club"
+type: ["Board Games", "Wargames", "RPG", "TCG"]
 days: ["Monday"]
 time: "6:00pm"
 frequency: "Weekly"

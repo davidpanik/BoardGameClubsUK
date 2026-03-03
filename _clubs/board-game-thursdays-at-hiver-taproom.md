@@ -1,5 +1,6 @@
 ---
 name: "Board Game Thursdays at Hiver Taproom"
+type: ["Board Games", "BOTC"]
 days: ["Thursday"]
 time: "6:00pm"
 frequency: "Fortnightly"

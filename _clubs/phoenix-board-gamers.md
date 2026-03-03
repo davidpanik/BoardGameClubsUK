@@ -1,5 +1,6 @@
 ---
 name: "Phoenix Board Gamers"
+type: ["Board Games", "Wargames", "TCG"]
 days: ["Friday"]
 time: "7:30pm - 11:00pm"
 frequency: "Monthly"

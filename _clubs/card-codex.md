@@ -1,5 +1,6 @@
 ---
 name: "Card Codex"
+type: ["TCG"]
 days: ["Sunday"]
 time: ""
 frequency: "Weekly"

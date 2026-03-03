@@ -1,5 +1,6 @@
 ---
 name: "Ribble Valley Gamers Guild"
+type: ["Board Games", "RPG"]
 days: ["Various"]
 time: ""
 frequency: "Monthly"

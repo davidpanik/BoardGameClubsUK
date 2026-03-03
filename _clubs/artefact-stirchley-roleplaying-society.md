@@ -1,5 +1,6 @@
 ---
 name: "Artefact - Stirchley Roleplaying Society"
+type: ["RPG"]
 days: ["Wednesday"]
 time: ""
 frequency: "Fortnightly"

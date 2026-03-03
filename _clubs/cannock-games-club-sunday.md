@@ -1,5 +1,6 @@
 ---
 name: "Cannock Games Club (Sunday)"
+type: ["Board Games", "RPG", "Wargames"]
 days: ["Sunday"]
 time: "6:00pm - 10:00pm"
 frequency: "Weekly"

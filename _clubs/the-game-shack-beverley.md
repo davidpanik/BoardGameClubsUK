@@ -1,5 +1,6 @@
 ---
 name: "The Game Shack Beverley"
+type: ["Board Games", "BOTC"]
 days: ["Thursday", "Friday", "Saturday", "Sunday"]
 time: "6:00pm - 9:00pm (1:00pm - 4:00pm weekends)"
 frequency: "Weekly"

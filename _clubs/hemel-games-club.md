@@ -1,5 +1,6 @@
 ---
 name: "Hemel Games club"
+type: ["Board Games", "RPG", "TCG"]
 days: ["Tuesday"]
 time: "8:00pm"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "Highland Tabletop"
+type: ["Board Games", "RPG"]
 days: ["Various"]
 time: ""
 frequency: "Monthly"

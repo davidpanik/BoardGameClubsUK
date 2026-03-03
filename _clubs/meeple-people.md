@@ -1,5 +1,6 @@
 ---
 name: "Meeple People"
+type: ["Board Games", "TCG"]
 days: ["Saturday"]
 time: "10:00am - 4:00pm"
 frequency: "Monthly"

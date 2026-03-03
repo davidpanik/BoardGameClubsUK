@@ -1,5 +1,6 @@
 ---
 name: "Thanet Board Games Club"
+type: ["Board Games", "BOTC"]
 days: ["Monday"]
 time: "6:00pm - 11:00pm"
 frequency: "Weekly"

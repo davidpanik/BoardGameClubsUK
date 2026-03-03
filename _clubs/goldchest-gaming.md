@@ -1,5 +1,6 @@
 ---
 name: "Goldchest Gaming"
+type: ["RPG", "Wargames"]
 days: ["Monday", "Sunday"]
 time: "5:00pm"
 frequency: "Weekly"

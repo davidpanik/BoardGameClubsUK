@@ -1,5 +1,6 @@
 ---
 name: "The Games Table"
+type: ["Board Games", "RPG"]
 days: ["Monday", "Wednesday", "Thursday"]
 time: ""
 frequency: "Weekly"

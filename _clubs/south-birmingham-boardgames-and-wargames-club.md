@@ -1,5 +1,6 @@
 ---
 name: "South Birmingham Boardgames & Wargames Club"
+type: ["Board Games", "Wargames"]
 days: ["Friday", "Sunday"]
 time: "6:30pm - 11:00pm"
 frequency: "Weekly"

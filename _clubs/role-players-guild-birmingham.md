@@ -1,5 +1,6 @@
 ---
 name: "Role Players Guild Birmingham"
+type: ["RPG"]
 days: ["Thursday"]
 time: "11:00pm"
 frequency: "Weekly"

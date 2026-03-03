@@ -54,6 +54,19 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: type
+    attributes:
+      label: What type of club is it?
+      description: Select all that apply. Leave blank for a general board game club.
+      multiple: true
+      options:
+        - Board Games
+        - RPG
+        - Wargames
+        - BOTC
+        - TCG
+
   - type: input
     id: venue_name
     attributes:

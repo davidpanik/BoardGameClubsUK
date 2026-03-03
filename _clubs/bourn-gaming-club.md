@@ -1,5 +1,6 @@
 ---
 name: "Bourn Gaming Club"
+type: ["Wargames", "TCG", "RPG"]
 days: ["Wednesday"]
 time: "7:00pm"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "Ayr Wargames Club"
+type: ["Wargames"]
 days: ["Sunday"]
 time: "12:00pm - 6:00pm"
 frequency: "Weekly"

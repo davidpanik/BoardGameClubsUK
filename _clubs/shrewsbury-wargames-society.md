@@ -1,5 +1,6 @@
 ---
 name: "Shrewsbury Wargames Society"
+type: ["Wargames"]
 days: ["Monday", "Friday"]
 time: "7:00pm"
 frequency: "Weekly"

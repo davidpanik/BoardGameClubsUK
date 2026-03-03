@@ -1,5 +1,6 @@
 ---
 name: "Gloucestershire Geek Society."
+type: ["Board Games", "RPG"]
 days: ["Various"]
 time: ""
 frequency: "Weekly"

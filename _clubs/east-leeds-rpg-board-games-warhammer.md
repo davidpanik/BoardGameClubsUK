@@ -1,5 +1,6 @@
 ---
 name: "East Leeds RPG, Board Games & Warhammer"
+type: ["Board Games", "RPG", "Wargames"]
 days: ["Tuesday"]
 time: "6:00pm - 11:00pm"
 frequency: "Weekly"

@@ -1,5 +1,6 @@
 ---
 name: "Wayfarer's League"
+type: ["RPG"]
 days: ["Thursday"]
 time: "7:00pm - 10:00pm"
 frequency: "Weekly"

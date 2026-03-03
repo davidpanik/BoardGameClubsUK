@@ -1,5 +1,6 @@
 ---
 name: "Gweeples"
+type: ["Board Games", "RPG"]
 days: ["Tuesday", "Wednesday"]
 time: "6:30pm"
 frequency: "Twice monthly"

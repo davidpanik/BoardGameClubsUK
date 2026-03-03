@@ -1,5 +1,6 @@
 ---
 name: "Leicester Juggernauts Wargaming Club"
+type: ["Wargames"]
 days: ["Tuesday"]
 time: "6:30pm"
 frequency: "Weekly"

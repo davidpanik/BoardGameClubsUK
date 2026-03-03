@@ -40,12 +40,29 @@
       <div class="sidebar" id="sidebar">
         <div class="drawer-handle" id="drawer-handle"><i data-lucide="chevron-up" class="drawer-chevron"></i></div>
         <div class="filter-bar">
-          <div class="search-bar sidebar-search">
-            <i data-lucide="search" class="search-icon"></i>
-            <input type="text" class="search-input" id="search-input-mobile" placeholder="Search by postcode, club name, or location..." autocomplete="off">
-            <div class="location-suggestions" id="location-suggestions-mobile"></div>
+          <div class="search-row sidebar-search">
+            <div class="search-bar">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" class="search-input" id="search-input-mobile" placeholder="Search by postcode, club name, or location..." autocomplete="off">
+              <div class="location-suggestions" id="location-suggestions-mobile"></div>
+            </div>
+            <button class="locate-btn locate-btn--mobile" id="locate-btn" type="button" aria-label="Use my location">
+              <i data-lucide="crosshair" style="width:16px;height:16px;"></i>
+            </button>
           </div>
           <div class="filter-row">
+            <div class="multi-select" id="type-filter">
+              <button class="multi-select-toggle filter-select" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="multi-select-label">All types</span>
+              </button>
+              <div class="multi-select-dropdown" role="listbox" aria-label="Filter by type">
+                <label class="multi-select-option" data-type="Board Games"><input type="checkbox" value="Board Games"><span class="multi-select-check"></span>Board Games</label>
+                <label class="multi-select-option" data-type="RPG"><input type="checkbox" value="RPG"><span class="multi-select-check"></span>RPG</label>
+                <label class="multi-select-option" data-type="Wargames"><input type="checkbox" value="Wargames"><span class="multi-select-check"></span>Wargames</label>
+                <label class="multi-select-option" data-type="BOTC"><input type="checkbox" value="BOTC"><span class="multi-select-check"></span>BOTC</label>
+                <label class="multi-select-option" data-type="TCG"><input type="checkbox" value="TCG"><span class="multi-select-check"></span>TCG</label>
+              </div>
+            </div>
             <div class="multi-select" id="day-filter">
               <button class="multi-select-toggle filter-select" type="button" aria-haspopup="listbox" aria-expanded="false">
                 <span class="multi-select-label">All days</span>
@@ -68,10 +85,6 @@
               <option value="25">Within 25 miles</option>
               <option value="50">Within 50 miles</option>
             </select>
-            <button class="locate-btn" id="locate-btn" type="button">
-              <i data-lucide="crosshair" style="width:14px;height:14px;"></i>
-              <span>Use my location</span>
-            </button>
           </div>
           <div class="location-pill" id="location-pill" style="display:none;">
             <i data-lucide="map-pin" style="width:12px;height:12px;"></i>

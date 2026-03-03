@@ -1,5 +1,6 @@
 ---
 name: "Lanarkshire Gamers"
+type: ["Board Games", "Wargames", "RPG"]
 days: ["Saturday"]
 time: "12:00pm - 5:00pm"
 frequency: "Twice monthly"

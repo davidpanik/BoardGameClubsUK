@@ -1,5 +1,6 @@
 ---
 name: "Middle-Earth SBG: UK Worcester Community"
+type: ["Wargames"]
 days: ["Thursday"]
 time: ""
 frequency: "Weekly"
