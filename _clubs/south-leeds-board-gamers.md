@@ -15,10 +15,10 @@ website: "https://www.slbg.club"
 facebook: "https://www.facebook.com/groups/973046293469333"
 discord: "https://discord.gg/vEvyCPNguJ"
 bgg: "https://boardgamegeek.com/guild/3919"
+founded_year: 2021
 description: >-
   A large, active community established for over 5 years, welcoming players
-  of all experience levels. Playing everything from Catan and Ticket to Ride
-  to heavier strategy and war games. Members bring their own collections and
+  of all experience levels. Playing everything from lighter games to heavier strategy and war games - we have something for everyone. Members bring their own collections and
   are happy to teach newcomers. No registration needed, just turn up.
-  Parking and on-site bar available, with takeaway options nearby.
+  There is parking with an on-site bar available, and takeaway options nearby. We also regularly organise social events for members such as Arcade Club visits and Christmas Parties!
 ---
