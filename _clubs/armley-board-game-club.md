@@ -6,7 +6,7 @@ time: "10:00am - 1:00pm"
 frequency: "Weekly"
 location:
   name: "Armley Community Hub (Armley Library)"
-  address: "2 Stocks Hill, LS12 1UQ"
+  address: "2 Stocks Hill, Leeds, LS12 1UQ"
   lat: 53.7971742
   lng: -1.5882482
 cost: "Free"
