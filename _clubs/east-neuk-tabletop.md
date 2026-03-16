@@ -3,13 +3,13 @@ name: "East Neuk Tabletop"
 type: ["Board Games", "RPG", "Wargames"]
 days: ["Sunday"]
 time: "1:00pm - 5:00pm"
-frequency: "Monthly"
+frequency: "Fortnightly"
 location:
   name: "Dreel Halls (lower hall) High Street West, Anstruther"
   address: "Dreel Halls (lower hall) High Street West, Anstruther, Fife, KY10 3DJ"
   lat: 56.22209
   lng: -2.70477
-cost: "Free"
+cost: "£2"
 image: "east-neuk-tabletop.jpg"
 website: "https://eastneuktabletop.org/"
 facebook: ""
