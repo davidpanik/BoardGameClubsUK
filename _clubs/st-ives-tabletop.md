@@ -1,6 +1,6 @@
 ---
 name: "St. Ives Tabletop"
-type: ["Board Games", "RPG Hosting"]
+type: ["Board Games"]
 days: ["Wednesday"]
 time: "7:30pm - 11:00pm"
 frequency: "Fortnightly"
