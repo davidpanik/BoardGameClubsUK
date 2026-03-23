@@ -14,20 +14,20 @@ $color-text-light: #a1a1aa;     // zinc 400 — secondary text, metadata
 $color-border: #e4e4e7;         // zinc 200 — borders, dividers
 $color-tag: #f4f4f5;            // zinc 100 — default tag background
 $color-tag-day: #334155;        // slate 700 — day tag background
-$color-tag-cost: #059669;       // emerald 600 — cost tag background
-$color-tag-cost-bg: #d1fae5;    // emerald 100 — cost tag background
+$color-tag-cost: #fff;
+$color-tag-cost-bg: #2ecc71;    // flat green
 
-// Type colors (strong / light pairs)
-$color-type-board-games: #3b82f6;
-$color-type-board-games-bg: #dbeafe;
-$color-type-rpg: #8b5cf6;
-$color-type-rpg-bg: #ede9fe;
-$color-type-wargames: #ef4444;
-$color-type-wargames-bg: #fee2e2;
-$color-type-botc: #ec4899;
-$color-type-botc-bg: #fce7f3;
-$color-type-tcg: #f59e0b;
-$color-type-tcg-bg: #fef3c7;
+// Type colors (flat UI palette)
+$color-type-board-games: #fff;
+$color-type-board-games-bg: #3498db;
+$color-type-rpg: #fff;
+$color-type-rpg-bg: #9b59b6;
+$color-type-wargames: #fff;
+$color-type-wargames-bg: #e74c3c;
+$color-type-botc: #fff;
+$color-type-botc-bg: #e91e63;
+$color-type-tcg: #fff;
+$color-type-tcg-bg: #f39c12;
 
 // Typography
 $font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;

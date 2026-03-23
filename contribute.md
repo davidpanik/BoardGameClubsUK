@@ -35,6 +35,7 @@ Paste the following into your new file and fill in the details:
 ```yaml
 ---
 name: "Your Club Name"
+type: ["Board Games"]
 days: ["Thursday"]
 time: "7:00pm - 10:00pm"
 frequency: "Weekly"
@@ -44,8 +45,10 @@ location:
   lat: 53.0000
   lng: -1.0000
 cost: "Free"
+age_restriction: ""
 image: ""
 website: ""
+meetup: ""
 facebook: ""
 discord: ""
 bgg: ""
@@ -60,13 +63,16 @@ description: >-
 | Field | Description |
 |-------|-------------|
 | `name` | Your club's full name |
+| `type` | Array of types, e.g. `["Board Games"]`. Options: "Board Games", "RPG", "Wargames", "TCG", "BOTC" |
 | `days` | Array of days you meet, e.g. `["Thursday"]` or `["Monday", "Friday"]` |
 | `time` | When you meet, e.g. "7:00pm - 10:00pm" |
 | `frequency` | "Weekly", "Fortnightly", "Monthly", or "Ad-hoc" |
 | `location` | Venue name, full address, and coordinates |
 | `cost` | "Free" or a money amount, e.g. "£2", "£5 (First Session Free)" |
+| `age_restriction` | Any age restriction, e.g. "18+". Leave empty if none |
 | `image` | A URL or filename in `assets/images/clubs/` (see [step 5](#5-adding-a-logo) below) |
 | `website` | Link to your club's website |
+| `meetup` | Link to your club's Meetup group |
 | `facebook` | Link to your club's Facebook page or group |
 | `discord` | Discord invite link |
 | `bgg` | BoardGameGeek guild or group link |

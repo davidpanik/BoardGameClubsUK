@@ -9,7 +9,7 @@ permalink: /about/
 
 # About Board Game Clubs UK
 
-Board Game Clubs UK is a free, community-maintained directory of board game clubs across the United Kingdom. Our goal is simple: help people find their nearest board game club on an interactive map.
+Board Game Clubs UK is a free, community-maintained directory of board game clubs across the United Kingdom. We connect people with local clubs, making it easy to discover where and when groups meet near you.
 
 ## How It Works
 

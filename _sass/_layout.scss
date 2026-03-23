@@ -7,6 +7,10 @@
   z-index: 1010;
   border-bottom: 1px solid $color-border;
 
+  @media (max-width: $bp-lg - 1) {
+    border-bottom: none;
+  }
+
   // Fix header in place on mobile home page so it doesn't scroll away
   // when browser shifts viewport on input focus
   body:has(.home-layout) & {
@@ -98,32 +102,36 @@
     font-weight: 500;
     border-radius: 6px;
     background: $color-tag;
-    transition: background 0.2s, transform 0.15s;
+    transition: background 0.2s;
     letter-spacing: 0.02em;
 
     &:hover {
       background: $color-border;
       text-decoration: none;
-      transform: translateY(-1px);
     }
 
     &.nav-cta {
-      background: $color-accent;
-      color: #fff;
+      background: transparent;
+      color: $color-accent;
       font-weight: 600;
+      box-shadow: inset 0 0 0 1px $color-accent;
 
       &:hover {
-        background: $color-accent-light;
+        background: rgba($color-accent, 0.08);
       }
     }
 
   }
 
+  $nav-btn-height: calc(0.82rem * 1.5 + 0.8rem);
+
   .nav-github {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.4rem 0.5rem;
+    width: $nav-btn-height;
+    height: $nav-btn-height;
+    padding: 0;
     background: none;
 
     svg {
