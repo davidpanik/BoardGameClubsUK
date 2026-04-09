@@ -4,10 +4,10 @@ days: ["Monday", "Wednesday", "Saturday"]
 time: "7:00pm - 11:00pm"
 frequency: "Weekly"
 location:
-  name: "St Mark's Church Centre"
-  address: "St Mark's Church, Church Ln, Colney Heath, St Albans AL4 0NH"
-  lat: 51.741063
-  lng: -0.2673519
+  name: "3rd St Albans Scouts hut"
+  address: "Scout Hut, End of Chene Drive on the Left, Off Waverley Road, St Albans, AL3 5PE"
+  lat: 51.761415
+  lng: -0.33968
 cost: "£4"
 image: "https://www.stalbansgames.co.uk/icon.png"
 website: "https://www.stalbansgames.co.uk/"
